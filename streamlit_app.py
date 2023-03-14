@@ -22,7 +22,7 @@ import requests
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
-streamlit.stop()
+#streamlit.stop()
 
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -37,4 +37,4 @@ streamlit.dataframe(my_data_row)
 fruit_choice1= streamlit.text_input('What fruit would you like to add','Kiwi')
 streamlit.write('The user entered ', fruit_choice1)
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice1)
-my_cur.execute("insert into fruit_load_list values ('tfrom streamlist')");
+my_cur.execute("insert into fruit_load_list values ('from streamlit')");
